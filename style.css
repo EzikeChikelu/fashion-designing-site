@@ -57,3 +57,23 @@ a{
     color: black;
     font-weight: bold;
 }
+@media screen and(max-width:900px) {
+    body{
+        width: 900px;
+    }
+
+    #logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    h3{
+        color: blue;
+        font-size: 20px;
+        text-align: right;
+    }
+
+    #options{
+        width: 850px;
+    }
+}
