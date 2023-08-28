@@ -69,7 +69,7 @@ a{
     font-weight: bold;
 }
 
-#sec2{
+#more{
     margin-top: 25px;
 }
 
@@ -91,7 +91,107 @@ i{
     margin-top: 50px;
 }
 
-@media screen and(max-width:900px) {
+svg {
+    width: 100%;
+  }
+.wave {
+    animation: wave 8s linear infinite;
+  }
+
+  .wave1 {
+    animation: wave1 10s linear infinite;
+  }
+
+  .wave2 {
+    animation: wave2 12s linear infinite;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes wave1 {
+    0% {
+      transform: scaleY(1.2) translateX(0%);
+    }
+
+    100% {
+      transform: scaleY(1.2) translateX(100%);
+    }
+  }
+
+  @keyframes wave2 {
+    0% {
+      transform: scaleY(.8) translateX(0%);
+    }
+
+    100% {
+      transform: scaleY(.8) translateX(100%);
+    }
+  }
+
+  .word{
+    font-size: 30px;
+  }
+
+  #word{
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  #img1{
+    width: 500px;
+    height: 700px;
+  }
+
+  #image2{
+    display: flex;
+    margin-left: 150px;
+  }
+  
+  #img2{
+    flex-direction: column;
+    width: 500px;
+    height: 700px;
+  }
+  
+  footer{
+    margin-bottom: 100px;
+  }
+
+  #contact{
+    width: 1350px;
+    height: 250px;
+    background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    margin-top: 50px;
+    padding-left: 20px;
+    }
+
+h3{
+    color: black;
+}
+
+#what{
+    width: 50px;
+    height: 50px;
+}
+
+#links{
+    margin-left: 10px;
+}
+
+a:hover{
+    color: blue;
+}
+@media screen and(max-width:900px)
+ {
     body{
         width: 900px;
     }
