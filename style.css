@@ -212,8 +212,42 @@ a:hover{
             border-radius: 10px;
             background-color: goldenrod;
             margin-top: 5px;
-            margin-right: 20px;
-            margin-left: 30px;
+            margin-right: 10px;
+            margin-left: 22px;
             font-size: 10px;
             }
+    #top{
+      width: 90%;
+      flex-direction: row;
+    }
+
+    #opt2{
+      max-width: 100%;
+      display: flex;
+    }
+
+    #logo{
+      width: 50px;
+      height: 50px;
+      padding-right: 0;
+      margin-right: 0;
+    }
+    h3{
+      margin-left: 0;
+      padding-left: 90px;
+      font-size: 20px;
+    }
+    #logo1{
+      margin-left: -130px;
+      padding-left: 0;
+      width: 50px;
+      height: 50px;
+    }
+
+    #long{
+      font-size: 10px;
+    }
+    .table{
+      width: 100%;
+    }
 }
