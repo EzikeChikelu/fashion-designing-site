@@ -197,7 +197,8 @@ a:hover{
     body{height: 150vh;}
 
     html{
-        max-width: 900px;
+        max-width: 100%;
+        width: 100%;
     }
 
     #options{
@@ -240,10 +241,7 @@ a:hover{
       font-size: 20px;
     }
     #logo1{
-      margin-left: -190px;
-      padding-left: 0;
-      width: 50px;
-      height: 50px;
+      display: none;
     }
 
     #long{
