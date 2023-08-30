@@ -192,7 +192,8 @@ svg {
 a:hover{
     color: blue;
 }
-@media screen and (max-width:900px)
+@media screen and (max-device-width: 480px)
+    and (orientation: portrait)
  {
     body{height: 150vh;
       padding-left: 0;
