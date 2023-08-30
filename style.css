@@ -195,10 +195,13 @@ a:hover{
 @media screen and (max-width:900px)
  {
     body{height: 150vh;
-     
+      padding-left: 0;
+      margin-left: 0;
     }
 
     html{
+        padding-left: 0;
+        margin-left: 0;
         max-width: 100%;
         width: 100%;
     }
