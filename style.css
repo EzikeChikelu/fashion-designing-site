@@ -199,17 +199,18 @@ a:hover{
     body{height: 150vh;
     overflow-x: hidden;
     }
+    
 
     html{
        
-        max-width: 100%;
-        width: 100%;
+        max-width: 100vh;
+        width: 100vw;
         padding-right: 0;
         margin-right: 0;
     }
 
     #options{
-        width: 100%;
+        width: 100vw;
         height: 50px;
         background: rgb(34,193,195);
         background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
@@ -217,7 +218,7 @@ a:hover{
         }
 
         #button1{
-            width: 55px;
+            width: 12vw;
             height: 30px;
             border-radius: 10px;
             background-color: goldenrod;
@@ -227,12 +228,12 @@ a:hover{
             font-size: 10px;
             }
     #top{
-      width: 90%;
+      width: 90vw;
       flex-direction: row;
     }
 
     #opt2{
-      max-width: 100%;
+      max-width: 100vw;
       display: flex;
     }
 
@@ -256,21 +257,16 @@ a:hover{
     }
 
     .table{
-      width: 100%;
+      width: 100vw;
       border: 3px solid #DE3163;
       box-shadow: 9px 6px 4px #5B2C6F;
       padding: 7px 11px;
       background-image: linear-gradient(150deg, #EAFAF1 , #E8DAEF 30%,#E5E8E8 );
       border-radius: 10px;
       text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-
      }
     .table{
-      width: 100%;
+      width: 100vw;
       margin-top: 10px;
     }
 
@@ -289,7 +285,7 @@ a:hover{
     }
 
     #contact{
-      max-width: 100%;
+      max-width: 100vw;
       height: 150px;
       background: rgb(34,193,195);
       background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
@@ -309,6 +305,7 @@ a:hover{
 
       footer{
         display: flex;
+        margin-right: 0;
       }
 
       #con{
