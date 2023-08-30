@@ -195,7 +195,7 @@ a:hover{
 @media screen and (max-width:900px)
  {
     body{height: 150vh;
-    width: 100vw;
+     
     }
 
     html{
@@ -212,7 +212,7 @@ a:hover{
         }
 
         #button1{
-            width: 50px;
+            width: 55px;
             height: 30px;
             border-radius: 10px;
             background-color: goldenrod;
