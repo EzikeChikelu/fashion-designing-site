@@ -306,6 +306,7 @@ a:hover{
       footer{
         display: flex;
         margin-right: 0;
+	overflow-x: hidden;
       }
 
       #con{
