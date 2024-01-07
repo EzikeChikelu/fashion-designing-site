@@ -215,7 +215,7 @@ a:hover{
   @media screen and (max-width: 480px) {
     body {
       width: 95%;
-      max-width: none;
+      max-width: 480px;
       margin: 0 auto;
     }
   
@@ -224,7 +224,7 @@ a:hover{
     }
   
     #button1 {
-      width: 70px;
+      width: 65px;
       margin-right: 10px;
       margin-left: 10px;
       font-size: 10px;
