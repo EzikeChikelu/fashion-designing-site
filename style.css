@@ -232,7 +232,7 @@ a:hover{
   
     #top {
       width: 90%;
-      margin: auto;
+      flex-direction: row;
     }
   
     #opt2 {
@@ -254,9 +254,7 @@ a:hover{
     }
   
     h3 {
-      margin-left: 0;
-      padding-left: 0;
-      font-size: 20px;
+      font-size: 18px;
     }
   
     .table {
