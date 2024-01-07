@@ -212,21 +212,14 @@ a:hover{
 }
 @media screen and (max-width:900px){
 
-    body{height: 150vh;
-    overflow-x: hidden;
-    }
-    
-
-    html{
-       
-        max-width: 100vh;
-        width: 100vw;
-        padding-right: 0;
-        margin-right: 0;
+    body{
+      height: 100vh;
+      width: 100vw;
+      margin: auto;
     }
 
     #options{
-        width: 100vw;
+        width: 90%;
         height: 50px;
         background: rgb(34,193,195);
         background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
@@ -234,38 +227,40 @@ a:hover{
         }
 
         #button1{
-            width: 50px;
+            width: 70px;
             height: 30px;
             border-radius: 10px;
             background-color: goldenrod;
             margin-top: 5px;
             margin-right: 10px;
-            margin-left: 15px;
+            margin-left: 20px;
             font-size: 10px;
             }
     #top{
-      width: 90vw;
+      width: 90%;
       flex-direction: row;
+      margin: auto;
     }
 
     #opt2{
-      max-width: 100vw;
+      max-width: 90%;
       display: flex;
+    }
+
+    #logo1{
+      width: 50px;
+      height: 50px;
+      margin-left: -35vw;
     }
 
     #logo{
       width: 50px;
       height: 50px;
-      padding-right: 0;
-      margin-right: 0;
     }
     h3{
       margin-left: 0;
       padding-left: 90px;
       font-size: 20px;
-    }
-    #logo1{
-      display: none;
     }
 
     #long{
