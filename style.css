@@ -210,7 +210,7 @@ svg {
 a:hover{
     color: blue;
 }
-@media screen and (max-width:900px){
+@media screen and (max-width:480pt){
 
     body{
       height: 100vh;
