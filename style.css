@@ -25,7 +25,7 @@ h3{
 	margin-right: 12px;
 }
 #top{
-	display: inline-flex;
+	
 }
 .table{
  width: 38em;
@@ -55,6 +55,7 @@ margin-left: 20px;
 
 #top{
   width: 100%;
+  display: inline-flex;
   flex-direction: row;
 }
 
@@ -208,44 +209,37 @@ svg {
 }
 
 a:hover{
-    color: blue;
+    color: red;
 }
 
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 900px) {
     body {
-      width: 95%;
-      max-width: 480px;
-      margin: 0 auto;
+      width: 90%;
+      max-width: 900px;
     }
   
     #options {
-      width: 90%;
+      width: 100%;
     }
   
     #button1 {
       width: 65px;
       margin-right: 5px;
-      margin-left: 5px;
+      margin-left: 15px;
       font-size: 10px;
     }
-  
-    #top {
-      width: 90%;
-      flex-direction: row;
-    }
-  
-    #opt2 {
-      max-width: 90%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
+
+     #top{
+       width: 95%;
+       display: inline-flex;
+       flex-direction: row;
+     }
+
     #logo1 {
       width: 50px;
       height: 50px;
-      margin-left: 0;
+      padding-left: 50vw;
     }
   
     #logo {
@@ -253,10 +247,12 @@ a:hover{
       height: 50px;
     }
   
-    h3 {
-      font-size: 12px;
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      color: white;
     }
-  
+
     .table {
       width: 100%;
       margin-top: 10px;
