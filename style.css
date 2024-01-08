@@ -6,7 +6,7 @@ padding-right: none;
 margin-right: none;
 }
 
-h3{
+h2{
 	color: white;
 	font-size: 60px;
     text-align: center;
@@ -24,9 +24,7 @@ h3{
 	margin-top: 10px;
 	margin-right: 12px;
 }
-#top{
-	
-}
+
 .table{
  width: 38em;
  border: 3px solid #DE3163;
@@ -74,8 +72,7 @@ margin-left: 65px;
 	width: 100px;
 	height: 100px;
 	margin-top: 10px;
-  padding-right: 0;
-  margin-left: 70px;
+  margin-left: 80vw;
 }
 
 a{
