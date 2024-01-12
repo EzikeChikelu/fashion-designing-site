@@ -242,9 +242,7 @@ a:hover{
     }
   
     h2 {
-      font-size: 20px;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      display: none;
     }
 
     .table {
