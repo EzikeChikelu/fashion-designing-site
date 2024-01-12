@@ -210,10 +210,10 @@ a:hover{
 }
 
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 450px) {
     body {
       width: 90%;
-      max-width: 900px;
+      max-width: 450px;
     }
   
     #options {
@@ -221,10 +221,10 @@ a:hover{
     }
   
     #button1 {
-      width: 65px;
+      width: 35px;
       margin-right: 5px;
       margin-left: 15px;
-      font-size: 10px;
+      font-size: 8px;
     }
 
      #top{
