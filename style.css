@@ -243,9 +243,7 @@ a:hover{
     }
   
     h2 {
-      font-size: 10px;
-      text-align: center;
-      color: white;
+      display: none;
     }
 
     .table {
