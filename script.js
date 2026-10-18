@@ -97,10 +97,9 @@ bookingForm?.addEventListener("submit", (event) => {
     "Please let me know the next steps. Thank you!"
   ].filter(Boolean).join("\\n");
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(details)}`;
-  const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-  if (!opened) {
-    window.location.href = whatsappUrl;
-  }
+  const opened = window.open(whatsappUrl, "_blank");
+  if (opened) opened.opener = null;
+  else window.location.href = whatsappUrl;
   if (formStatus) formStatus.textContent = "Your message is ready. In WhatsApp, choose the NNIA Stitches chat and tap Send.";
 });
 
