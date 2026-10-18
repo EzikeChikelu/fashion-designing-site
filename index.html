@@ -1,125 +1,82 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	<title>E.V.A Stitches</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel= "icon" href="https://cdn-icons-png.flaticon.com/512/1215/1215866.png" />
-	<link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171714">
+  <meta name="description" content="NNIA Stitches — thoughtful tailoring, expressive style, and made-to-measure fashion crafted with care.">
+  <title>NNIA Stitches — Made with intention</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-	<section id="opt">
-		<div id="options">
-			<span>
-				<button id="button1"><a href="#">Home</a></button>
-				<button id="button1"><a href="#table">About</a></button>
-				<button id="button1"><a href="#more">More</a></button>
-				<button id="button1"><a href="#contact">Contact</a></button>
-			</span>
-		</div>
-	</section>
-	<h2>Nnia Stitches</h2>
-	<section id="opt2">
-<span id="top">
-	<img id="logo" src="images/logo.jpeg" alt="Logo">
-	<img id="logo1" src="images/logo.jpeg" alt="Logo1">
-</span>
-<p class="title">
-</p>
-	</section>
-	<section id="table">
-		<div class="table">
-			<p id="long">"Passionate Self-Employed Fashion Designer: With a keen eye for style and an unbridled creative spirit,
-			 I am a self-employed fashion designer dedicated to transforming fabrics into works of art. My journey in 
-			 the world of fashion began as a dream, and today, it's a thriving reality. Through meticulous craftsmanship
-			  and an innate sense of trends. I bring unique concepts to life, blending elegance with innovation."</p>
-		</div>
-	</section>
+  <div class="announcement">THOUGHTFUL DESIGN. BEAUTIFULLY MADE. <span>Made for you, always.</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="NNIA Stitches home"><span class="brand-mark">N<span>.</span></span><span class="brand-name">NNIA <small>STITCHES</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav id="main-nav" class="nav-links" aria-label="Main navigation">
+      <a href="#story">Our story</a><a href="#services">What we do</a><a href="#collection">The atelier</a><a href="#contact" class="nav-cta">Let's create <span>↗</span></a>
+    </nav>
+  </header>
 
-	<section id="more">
-	<p id="para">
-		<i class="fa fa-heart" style="font-size:60px; color:red; text-shadow:white; margin-left: 16px;"></i>
-		<div id="margin">
-		<span>Customer satisfaction is our top priority. We deliver products/services exceeding expectations through 
-			attentive listening, personalized care, and continuous quality refinement.</span>
-		</div>
-	</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE ART OF PERSONAL STYLE</p>
+        <h1>Wear the feeling<br>of <em>being you.</em></h1>
+        <p class="hero-intro">Distinctive pieces, considered details, and a fit that feels like it was always yours. Welcome to NNIA Stitches.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#collection">Explore our work <span>↗</span></a><a class="text-link" href="#story">Meet the maker <span>↓</span></a></div>
+        <div class="hero-note"><span class="note-star">✳</span><span>Made with care, from first sketch<br>to final stitch.</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Fashion editorial portrait">
+        <div class="hero-image"></div>
+        <div class="image-label"><span>01 / ATELIER NOTES</span><span>EST. WITH PASSION</span></div>
+        <div class="vertical-caption">CRAFTED TO FEEL DIFFERENT</div>
+        <div class="hero-stamp">N<span>✳</span>S</div>
+      </div>
+      <div class="hero-bottom"><span>INDEPENDENT DESIGN · PERSONAL CRAFT</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
 
-	<p id="para">
-		<i class="fa fa-truck" style="font-size:60px; color:green; text-shadow:white; margin-left: 16px;"></i>
-		<div id="margin">
-		<span>We excel in swift customer delivery. Valuing your time, we guarantee your purchased items arrive quickly 
-			and securely. Through trusted logistics partnerships and advanced tracking, we optimize our supply chain for 
-			minimal wait times.</span>
-		</div>
-	</p>
+    <section class="intro section-pad" id="story">
+      <p class="eyebrow">A LITTLE ABOUT US</p>
+      <div class="intro-grid"><h2>Good style is personal.<br><em>Great craft makes it last.</em></h2><div class="intro-copy"><p>At NNIA Stitches, we believe the best clothes do more than fit your body — they reflect your story. Every design starts with a conversation and comes to life through thoughtful craftsmanship.</p><a class="text-link" href="#contact">Let's make something special <span>↗</span></a></div></div>
+      <div class="stats"><div><strong>01</strong><span>Made around you</span></div><div><strong>✳</strong><span>Details that matter</span></div><div><strong>∞</strong><span>Style without limits</span></div></div>
+    </section>
 
-	<p id="para">
-		<i class="fa fa-scissors" style="font-size:60px; color:white; text-shadow:white; margin-left: 16px;"></i>
-		<div id="margin">
-		<span>At NNIA Stitches, we're proud of our exceptionally neat work. Precision and detail define every project we 
-			do. Be it products, services, or any aspect, cleanliness and organization are paramount. </span>
-	    </div>
-	</p>
+    <section class="services section-pad" id="services">
+      <div class="section-heading"><div><p class="eyebrow">THE NNIA APPROACH</p><h2>Small details.<br><em>Big difference.</em></h2></div><p class="section-aside">From the first idea to the finishing touch, we bring intention to every part of the process.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-number">01</span><div class="service-icon">✳</div><h3>Made for you</h3><p>Personalised designs and considered fits that celebrate your taste, your shape, and your individuality.</p><span class="service-foot">PERSONAL DESIGN</span></article>
+        <article class="service-card"><span class="service-number">02</span><div class="service-icon">✂</div><h3>Beautifully finished</h3><p>Neat stitching, careful construction, and the kind of finishing that makes a piece feel complete.</p><span class="service-foot">ATTENTION TO DETAIL</span></article>
+        <article class="service-card"><span class="service-number">03</span><div class="service-icon">↗</div><h3>Made with care</h3><p>Clear communication and a thoughtful process, with your experience and satisfaction at the centre.</p><span class="service-foot">A PERSONAL EXPERIENCE</span></article>
+      </div>
+    </section>
 
-	<p id="para">
-		<i class="fa fa-clock-o" style="font-size:60px; color:lightblue; text-shadow:white; margin-left: 16px;"></i>
-		<div id="margin">
-		<span>Count on us for swift and efficient project completion. Timeliness is paramount, and we excel in delivering
-			 prompt results. With streamlined processes, a seasoned team, and strategic planning, we expedite projects 
-			 while upholding quality.</span>
-		</div>
-	</p>
-	</section>
-</div>
-	<div id="mid">
-		<section>
-			<svg viewbox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-				<defs>
-				  <path id='sineWave' fill="#0099ff" fill-opacity="0.5" d="M0,160 C320,300,420,300,740,160 C1060,20,1120,20,1440,160 V0 H0" />
-				</defs>
-				<use class="wave" href="#sineWave" />
-				<use class="wave" x="-100%" href="#sineWave" />
-				<use class="wave1" href="#sineWave" />
-				<use class="wave1" x="-100%" href="#sineWave" />
-				<use class="wave2" href="#sineWave" />
-				<use class="wave2" x="-100%" href="#sineWave" />
-			  </svg>
-		</section>
+    <section class="collection section-pad" id="collection">
+      <div class="section-heading collection-heading"><div><p class="eyebrow">SELECTED CREATIONS</p><h2>A glimpse into<br><em>our atelier.</em></h2></div><p class="section-aside">Every piece has its own personality. Explore a selection of our work and find a little inspiration for your next look.</p></div>
+      <div class="gallery-tools"><span>THE WORK, IN FRAME</span><div class="gallery-filters" role="group" aria-label="Filter gallery"><button class="filter-button active" data-filter="all">All pieces</button><button class="filter-button" data-filter="statement">Statement</button><button class="filter-button" data-filter="details">Details</button></div></div>
+      <div class="gallery">
+        <button class="gallery-item gallery-large" data-category="statement" data-image="images/dress1.jpeg" aria-label="View featured design"><img src="images/dress1.jpeg" alt="Featured NNIA Stitches design" loading="lazy"><span class="gallery-caption"><span>01 — THE STATEMENT</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="details" data-image="images/dress2.jpeg" aria-label="View design two"><img src="images/dress2.jpeg" alt="Handcrafted fashion design" loading="lazy"><span class="gallery-caption"><span>02 — THE DETAILS</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="statement" data-image="images/dress3.jpeg" aria-label="View design three"><img src="images/dress3.jpeg" alt="A distinctive tailored look" loading="lazy"><span class="gallery-caption"><span>03 — THE SILHOUETTE</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="details" data-image="images/dress4.jpeg" aria-label="View design four"><img src="images/dress4.jpeg" alt="Fashion craftsmanship detail" loading="lazy"><span class="gallery-caption"><span>04 — THE FINISH</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="statement" data-image="images/dress5.jpeg" aria-label="View design five"><img src="images/dress5.jpeg" alt="Elegant custom fashion piece" loading="lazy"><span class="gallery-caption"><span>05 — THE EXPRESSION</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="details" data-image="images/dress6.jpeg" aria-label="View design six"><img src="images/dress6.jpeg" alt="A close look at a finished piece" loading="lazy"><span class="gallery-caption"><span>06 — THE CRAFT</span><span class="gallery-arrow">↗</span></span></button>
+        <button class="gallery-item" data-category="statement" data-image="images/dress7.jpeg" aria-label="View design seven"><img src="images/dress7.jpeg" alt="Another original NNIA Stitches design" loading="lazy"><span class="gallery-caption"><span>07 — THE INDIVIDUAL</span><span class="gallery-arrow">↗</span></span></button>
+      </div>
+      <p class="gallery-note">A selection of our work. Your next favourite piece starts with an idea.</p>
+    </section>
 
-		<section id="word">
-			<span class="word">Here are some of my finished works</span>
-			<div>
-				<p>
-				<img id="img1" src="images/dress1.jpeg">
-				</p>
+    <section class="quote-section"><div class="quote-mark">“</div><p>Clothing is more than what you put on.<br>It's how you <em>show up in the world.</em></p><span>THE NNIA STITCHES PHILOSOPHY</span></section>
 
-				<p id="image2">
-				<img id="img2" src="images/dress2.jpeg">
-				<img id="img2" src="images/dress3.jpeg">
-				</p>
+    <section class="contact section-pad" id="contact"><div class="contact-orbit">N<span>✳</span>S</div><div class="contact-copy"><p class="eyebrow">YOUR IDEA, OUR CRAFT</p><h2>Have a look<br>in mind? <em>Let's talk.</em></h2><p>Tell us what you're imagining. We'd love to help you bring it to life, one thoughtful detail at a time.</p><div class="contact-actions"><a class="button button-light" href="https://wa.link/abf3dp" target="_blank" rel="noopener noreferrer">Start on WhatsApp <span>↗</span></a><a class="contact-social" href="https://www.instagram.com/nnia_stitches/" target="_blank" rel="noopener noreferrer">Follow along on Instagram ↗</a></div></div><div class="contact-side"><span>LET'S CREATE SOMETHING<br>THAT FEELS LIKE YOU.</span><span class="contact-flower">✳</span></div></section>
+  </main>
 
-				<p id="image2">
-				<img id="img2" src="images/dress4.jpeg">
-				<img id="img2" src="images/dress5.jpeg">
-				</p>
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">N<span>.</span></span><span class="brand-name">NNIA <small>STITCHES</small></span></a><span>MADE WITH INTENTION. FINISHED WITH CARE.</span><span>© <span id="year"></span> NNIA STITCHES</span></footer>
 
-				<p id="image2">
-				<img id="img2" src="images/dress6.jpeg">
-				<img id="img2" src="images/dress7.jpeg">
-				</p>
-			</div>
-		</section>
-	</div>
+  <dialog class="lightbox" aria-label="Expanded fashion image"><button class="lightbox-close" aria-label="Close image">×</button><img src="" alt="Expanded fashion design"><p>NNIA STITCHES — SELECTED WORK</p></dialog>
 </body>
-
-<footer>
-	<div id="contact">
-		<h3 id="con">Contact me on</h3>
-		<a id="links" href="https://wa.link/abf3dp" target="_blank"><img id="what" src="images/whatsapp.png"></a><a id="links" href="https://wa.link/abf3dp" target="_blank">Whatsapp</a>
-		<a id="links" href="https://www.instagram.com/nnia_stitches/" target="_blank"><img id="what" src="images/instagram.jpg"></a><a id="links" href="https://www.instagram.com/nnia_stitches/" target="_blank">Instagram</a>
-	</div>
-</footer>
 </html>
