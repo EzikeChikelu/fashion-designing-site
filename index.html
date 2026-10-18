@@ -96,26 +96,59 @@
 
     <section class="quote-section"><div class="quote-mark">“</div><p>Clothing is more than what you put on.<br>It's how you <em>show up in the world.</em></p><span>THE NNIA STITCHES PHILOSOPHY</span></section>
 
-    <section class="contact section-pad" id="contact"><div class="contact-orbit">N<span>✳</span>S</div><div class="contact-copy"><p class="eyebrow">YOUR IDEA, OUR CRAFT</p><h2>Have a look<br>in mind? <em>Let's talk.</em></h2><p>Tell us what you're imagining. We'd love to help you bring it to life, one thoughtful detail at a time.</p><form class="booking-form" id="booking-form">
-          <p class="form-heading">Tell us what you're imagining</p>
-          <div class="form-row">
-            <label>Your name<input name="name" autocomplete="name" required maxlength="80" placeholder="How should we address you?"></label>
-            <label>What do you need?
+    <section class="contact section-pad" id="contact"><div class="contact-orbit">N<span>✳</span>S</div><div class="contact-copy"><p class="eyebrow">YOUR IDEA, OUR CRAFT</p><h2>Have a look<br>in mind? <em>Let's talk.</em></h2><p>Tell us what you're imagining. We'd love to help you bring it to life, one thoughtful detail at a time.</p><form class="booking-form" id="booking-form" novalidate>
+          <div class="booking-form-top">
+            <div><p class="form-kicker">MADE AROUND YOU</p><p class="form-heading">Let's design your piece.</p></div>
+            <span class="form-edition">NNIA / CUSTOM</span>
+          </div>
+          <div class="form-progress" aria-label="Enquiry progress">
+            <div class="progress-copy"><span id="step-label">STEP 01 OF 03</span><span id="progress-percent">33% complete</span></div>
+            <div class="progress-track"><span id="progress-fill"></span></div>
+            <div class="step-indicators"><span class="step-dot current" data-step-dot="0">01 <span>About you</span></span><span class="step-dot" data-step-dot="1">02 <span>Your design</span></span><span class="step-dot" data-step-dot="2">03 <span>Review</span></span></div>
+          </div>
+          <section class="form-step active" data-form-step="0" aria-labelledby="step-one-title">
+            <div class="form-step-heading"><span>01</span><div><h3 id="step-one-title">First, the essentials.</h3><p>So we know who we're creating for.</p></div></div>
+            <div class="form-field-grid">
+              <label class="form-field">Your full name <span class="required-mark">*</span><input name="name" autocomplete="name" required maxlength="80" placeholder="e.g. Ada Okafor"></label>
+              <label class="form-field">Best way to reach you <span class="field-hint">Optional</span><input name="contact" autocomplete="tel" inputmode="tel" maxlength="50" placeholder="Phone or email"></label>
+            </div>
+            <label class="form-field">What are we making? <span class="required-mark">*</span>
               <select name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option>Custom outfit</option><option>Traditional wear</option><option>Alterations / fitting</option><option>Special occasion</option><option>Something else</option>
+                <option value="" disabled selected>Choose the kind of work</option>
+                <option>Custom outfit</option><option>Traditional / occasion wear</option><option>Ready-to-wear piece</option><option>Alterations or fitting</option><option>Bridal / special event</option><option>Not sure yet — let's discuss</option>
               </select>
             </label>
-          </div>
-          <div class="form-row">
-            <label>Preferred date <span class="optional-label">Optional</span><input name="date" type="date"></label>
-            <label>Budget range <span class="optional-label">Optional</span>
-              <select name="budget"><option value="">Choose a range</option><option>Under ₦30,000</option><option>₦30,000–₦60,000</option><option>₦60,000–₦100,000</option><option>₦100,000+</option><option>I'd like guidance</option></select>
-            </label>
-          </div>
-          <label>Describe your idea<textarea name="details" rows="3" maxlength="800" placeholder="Outfit style, occasion, fabric ideas, measurements…"></textarea></label>
-          <button class="button button-light booking-submit" type="submit">Prepare my enquiry <span>↗</span></button>
-          <p class="form-note">We'll prepare your message in WhatsApp. Choose the NNIA Stitches chat to send it. Nothing is stored on this website.</p>
+            <div class="form-field">
+              <span class="field-label">What is it for?</span>
+              <div class="choice-grid" role="group" aria-label="Occasion">
+                <label class="choice-card"><input type="radio" name="occasion" value="Everyday / casual"><span class="choice-icon">✳</span><span>Everyday</span></label>
+                <label class="choice-card"><input type="radio" name="occasion" value="Work / formal"><span class="choice-icon">◈</span><span>Work / formal</span></label>
+                <label class="choice-card"><input type="radio" name="occasion" value="Wedding / celebration"><span class="choice-icon">✧</span><span>Celebration</span></label>
+                <label class="choice-card"><input type="radio" name="occasion" value="Other occasion"><span class="choice-icon">＋</span><span>Other</span></label>
+              </div>
+            </div>
+            <div class="form-navigation"><span class="form-privacy"><span class="privacy-lock" aria-hidden="true">⌑</span>Your details stay in this message.</span><button class="button button-light form-next" type="button" data-next>Next: your design <span>→</span></button></div>
+          </section>
+          <section class="form-step" data-form-step="1" aria-labelledby="step-two-title" hidden>
+            <div class="form-step-heading"><span>02</span><div><h3 id="step-two-title">Bring the idea to life.</h3><p>The more you share, the better we can guide you.</p></div></div>
+            <label class="form-field">Describe your vision <span class="required-mark">*</span><textarea name="details" rows="4" required minlength="8" maxlength="1000" placeholder="Tell us about the look, fabric, colour, fit, or inspiration you have in mind…"></textarea><span class="field-footer"><span>Don't worry if it's still just an idea.</span><span id="details-count">0 / 1000</span></span></label>
+            <div class="form-field-grid">
+              <label class="form-field">When do you need it? <span class="field-hint">Optional</span><input name="date" type="date" id="preferred-date"></label>
+              <label class="form-field">Estimated budget <span class="field-hint">Optional</span><select name="budget"><option value="">Help me decide</option><option>Under ₦30,000</option><option>₦30,000–₦60,000</option><option>₦60,000–₦100,000</option><option>₦100,000–₦200,000</option><option>₦200,000+</option></select></label>
+            </div>
+            <div class="form-field">
+              <span class="field-label">How ready is your idea?</span>
+              <div class="radio-pills"><label><input type="radio" name="readiness" value="I have reference photos"><span>I have reference photos</span></label><label><input type="radio" name="readiness" value="I have a clear idea"><span>I have a clear idea</span></label><label><input type="radio" name="readiness" value="I need help deciding"><span>I need help deciding</span></label></div>
+            </div>
+            <label class="form-field">Reference link <span class="field-hint">Optional</span><input name="reference" type="url" maxlength="500" placeholder="Link to an inspiration photo or lookbook"><span class="field-hint">You can also share photos directly in WhatsApp after opening it.</span></label>
+            <div class="form-navigation"><button class="button button-quiet form-back" type="button" data-back>← Back</button><button class="button button-light form-next" type="button" data-next>Review enquiry <span>→</span></button></div>
+          </section>
+          <section class="form-step" data-form-step="2" aria-labelledby="step-three-title" hidden>
+            <div class="form-step-heading"><span>03</span><div><h3 id="step-three-title">Does this feel right?</h3><p>Check your brief before preparing the WhatsApp message.</p></div></div>
+            <div class="review-card" id="enquiry-review" aria-live="polite"></div>
+            <p class="review-note"><span>✳</span> No payment or booking is made here. This sends your enquiry to WhatsApp so NNIA Stitches can discuss availability, fit, and pricing with you.</p>
+            <div class="form-navigation"><button class="button button-quiet form-back" type="button" data-back>← Edit details</button><button class="button button-light booking-submit" type="submit">Continue to WhatsApp <span>↗</span></button></div>
+          </section>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
         <div class="contact-actions"><a class="text-link contact-direct" href="https://wa.link/abf3dp" target="_blank" rel="noopener noreferrer">Prefer to message directly? <span>↗</span></a><a class="contact-social" href="https://www.instagram.com/nnia_stitches/" target="_blank" rel="noopener noreferrer">Follow along on Instagram ↗</a></div></div><div class="contact-side"><span>LET'S CREATE SOMETHING<br>THAT FEELS LIKE YOU.</span><span class="contact-flower">✳</span></div></section>

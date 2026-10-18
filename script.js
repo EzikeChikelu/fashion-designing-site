@@ -78,29 +78,140 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
   revealTargets.forEach((element) => revealObserver.observe(element));
 }
 
-// Build a WhatsApp-ready enquiry without storing form data on the site.
+// Guided enquiry wizard: validate each step and build a clear, user-approved brief.
 const bookingForm = document.querySelector("#booking-form");
 const formStatus = document.querySelector("#form-status");
+const formSteps = [...document.querySelectorAll("[data-form-step]")];
+const stepDots = [...document.querySelectorAll("[data-step-dot]")];
+const stepLabel = document.querySelector("#step-label");
+const progressPercent = document.querySelector("#progress-percent");
+const progressFill = document.querySelector("#progress-fill");
+const review = document.querySelector("#enquiry-review");
+const detailsField = bookingForm?.elements.namedItem("details");
+const detailsCount = document.querySelector("#details-count");
+const preferredDate = document.querySelector("#preferred-date");
+let currentFormStep = 0;
+
+if (preferredDate) {
+  const now = new Date();
+  const localToday = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  preferredDate.min = localToday;
+}
+detailsField?.addEventListener("input", () => {
+  if (detailsCount) detailsCount.textContent = `${detailsField.value.length} / 1000`;
+});
+
+function setFormStep(nextStep) {
+  currentFormStep = Math.max(0, Math.min(2, nextStep));
+  formSteps.forEach((step, index) => {
+    const active = index === currentFormStep;
+    step.hidden = !active;
+    step.classList.toggle("active", active);
+  });
+  stepDots.forEach((dot, index) => {
+    dot.classList.toggle("current", index === currentFormStep);
+    dot.classList.toggle("done", index < currentFormStep);
+    dot.setAttribute("aria-current", index === currentFormStep ? "step" : "false");
+  });
+  if (stepLabel) stepLabel.textContent = `STEP 0${currentFormStep + 1} OF 03`;
+  if (progressPercent) progressPercent.textContent = `${Math.round(((currentFormStep + 1) / 3) * 100)}% complete`;
+  if (progressFill) progressFill.style.width = `${((currentFormStep + 1) / 3) * 100}%`;
+  if (formStatus) formStatus.textContent = "";
+}
+
+function validateStep(stepIndex) {
+  const step = formSteps[stepIndex];
+  if (!step || !bookingForm) return true;
+  const fields = [...step.querySelectorAll("input,select,textarea")].filter((field) => field.willValidate);
+  for (const field of fields) {
+    if (!field.checkValidity()) {
+      field.reportValidity();
+      field.focus();
+      return false;
+    }
+  }
+  return true;
+}
+
+function fieldValue(name) {
+  const field = bookingForm?.elements.namedItem(name);
+  if (!field) return "";
+  if (field instanceof RadioNodeList) return field.value || "";
+  return field.value?.trim?.() ?? "";
+}
+
+function renderReview() {
+  if (!review) return;
+  const rows = [
+    ["Name", fieldValue("name")],
+    ["Contact", fieldValue("contact")],
+    ["Service", fieldValue("service")],
+    ["Occasion", fieldValue("occasion")],
+    ["Design brief", fieldValue("details")],
+    ["Needed by", fieldValue("date")],
+    ["Budget", fieldValue("budget")],
+    ["Idea status", fieldValue("readiness")],
+    ["Reference", fieldValue("reference")]
+  ];
+  review.replaceChildren();
+  rows.forEach(([label, value]) => {
+    const row = document.createElement("div");
+    row.className = "review-row";
+    const key = document.createElement("span");
+    key.className = "review-label";
+    key.textContent = label;
+    const val = document.createElement("span");
+    val.className = `review-value${value ? "" : " is-empty"}`;
+    val.textContent = value || (label === "Design brief" ? "Not provided" : "Not added");
+    row.append(key, val);
+    review.append(row);
+  });
+}
+
+bookingForm?.querySelectorAll("[data-next]").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!validateStep(currentFormStep)) return;
+    if (currentFormStep === 1) renderReview();
+    setFormStep(currentFormStep + 1);
+    formSteps[currentFormStep]?.querySelector("input,select,textarea,button")?.focus({ preventScroll: true });
+    bookingForm.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
+  });
+});
+bookingForm?.querySelectorAll("[data-back]").forEach((button) => {
+  button.addEventListener("click", () => {
+    setFormStep(currentFormStep - 1);
+  });
+});
+
 bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!bookingForm.reportValidity()) return;
-  const values = new FormData(bookingForm);
+  if (!validateStep(0) || !validateStep(1)) {
+    const invalidStep = formSteps.findIndex((step) => [...step.querySelectorAll("input,select,textarea")].some((field) => field.willValidate && !field.checkValidity()));
+    setFormStep(Math.max(0, invalidStep));
+    validateStep(currentFormStep);
+    return;
+  }
+  renderReview();
   const details = [
-    "Hello NNIA Stitches! I'd like to enquire about an outfit.",
+    "Hello NNIA Stitches! I'd like to enquire about a piece.",
     "",
-    `Name: ${values.get("name")}`,
-    `Service: ${values.get("service")}`,
-    values.get("date") ? `Preferred date: ${values.get("date")}` : "",
-    values.get("budget") ? `Budget: ${values.get("budget")}` : "",
-    values.get("details") ? `My idea: ${values.get("details")}` : "",
+    `Name: ${fieldValue("name")}`,
+    fieldValue("contact") ? `My contact: ${fieldValue("contact")}` : "",
+    `What I need: ${fieldValue("service")}`,
+    fieldValue("occasion") ? `Occasion: ${fieldValue("occasion")}` : "",
+    `My design idea: ${fieldValue("details")}`,
+    fieldValue("date") ? `Needed by: ${fieldValue("date")}` : "",
+    fieldValue("budget") ? `Budget: ${fieldValue("budget")}` : "",
+    fieldValue("readiness") ? `Idea status: ${fieldValue("readiness")}` : "",
+    fieldValue("reference") ? `Inspiration link: ${fieldValue("reference")}` : "",
     "",
-    "Please let me know the next steps. Thank you!"
+    "Please let me know availability, pricing, and the next steps. Thank you!"
   ].filter(Boolean).join("\n");
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(details)}`;
   const opened = window.open(whatsappUrl, "_blank");
   if (opened) opened.opener = null;
   else window.location.href = whatsappUrl;
-  if (formStatus) formStatus.textContent = "Your message is ready. In WhatsApp, choose the NNIA Stitches chat and tap Send.";
+  if (formStatus) formStatus.textContent = "Your enquiry is prepared. In WhatsApp, choose the NNIA Stitches chat and tap Send.";
 });
 
 // Close the mobile navigation with Escape as well as the menu button.
