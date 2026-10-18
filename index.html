@@ -4,12 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171714">
-  <meta name="description" content="NNIA Stitches — thoughtful tailoring, expressive style, and made-to-measure fashion crafted with care.">
+  <meta name="description" content="Discover NNIA Stitches: thoughtful tailoring, personal design, and beautifully finished fashion made around you. Start your custom outfit enquiry today.">
+  <meta name="author" content="NNIA Stitches">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NNIA Stitches — Made with intention">
+  <meta property="og:description" content="Distinctive pieces, considered details, and a fit that feels like it was always yours.">
+  <meta property="og:image" content="images/dress1.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NNIA Stitches — Made with intention">
+  <meta name="twitter:description" content="Thoughtful tailoring and personal style, beautifully made.">
+  <meta name="color-scheme" content="light">
   <title>NNIA Stitches — Made with intention</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "NNIA Stitches",
+    "description": "Thoughtful tailoring, personal design, and made-to-measure fashion crafted with care.",
+    "sameAs": ["https://www.instagram.com/nnia_stitches/"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "custom outfit enquiries",
+      "url": "https://wa.link/abf3dp"
+    }
+  }
+  </script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -22,7 +45,8 @@
     </nav>
   </header>
 
-  <main>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content">
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> THE ART OF PERSONAL STYLE</p>
@@ -57,7 +81,7 @@
 
     <section class="collection section-pad" id="collection">
       <div class="section-heading collection-heading"><div><p class="eyebrow">SELECTED CREATIONS</p><h2>A glimpse into<br><em>our atelier.</em></h2></div><p class="section-aside">Every piece has its own personality. Explore a selection of our work and find a little inspiration for your next look.</p></div>
-      <div class="gallery-tools"><span>THE WORK, IN FRAME</span><div class="gallery-filters" role="group" aria-label="Filter gallery"><button class="filter-button active" data-filter="all">All pieces</button><button class="filter-button" data-filter="statement">Statement</button><button class="filter-button" data-filter="details">Details</button></div></div>
+      <div class="gallery-tools"><span>THE WORK, IN FRAME</span><div class="gallery-filters" role="group" aria-label="Filter gallery"><button class="filter-button active" data-filter="all" aria-pressed="true">All pieces</button><button class="filter-button" data-filter="statement" aria-pressed="false">Statement</button><button class="filter-button" data-filter="details" aria-pressed="false">Details</button></div></div>
       <div class="gallery">
         <button class="gallery-item gallery-large" data-category="statement" data-image="images/dress1.jpeg" aria-label="View featured design"><img src="images/dress1.jpeg" alt="Featured NNIA Stitches design" loading="lazy"><span class="gallery-caption"><span>01 — THE STATEMENT</span><span class="gallery-arrow">↗</span></span></button>
         <button class="gallery-item" data-category="details" data-image="images/dress2.jpeg" aria-label="View design two"><img src="images/dress2.jpeg" alt="Handcrafted fashion design" loading="lazy"><span class="gallery-caption"><span>02 — THE DETAILS</span><span class="gallery-arrow">↗</span></span></button>
@@ -72,7 +96,29 @@
 
     <section class="quote-section"><div class="quote-mark">“</div><p>Clothing is more than what you put on.<br>It's how you <em>show up in the world.</em></p><span>THE NNIA STITCHES PHILOSOPHY</span></section>
 
-    <section class="contact section-pad" id="contact"><div class="contact-orbit">N<span>✳</span>S</div><div class="contact-copy"><p class="eyebrow">YOUR IDEA, OUR CRAFT</p><h2>Have a look<br>in mind? <em>Let's talk.</em></h2><p>Tell us what you're imagining. We'd love to help you bring it to life, one thoughtful detail at a time.</p><div class="contact-actions"><a class="button button-light" href="https://wa.link/abf3dp" target="_blank" rel="noopener noreferrer">Start on WhatsApp <span>↗</span></a><a class="contact-social" href="https://www.instagram.com/nnia_stitches/" target="_blank" rel="noopener noreferrer">Follow along on Instagram ↗</a></div></div><div class="contact-side"><span>LET'S CREATE SOMETHING<br>THAT FEELS LIKE YOU.</span><span class="contact-flower">✳</span></div></section>
+    <section class="contact section-pad" id="contact"><div class="contact-orbit">N<span>✳</span>S</div><div class="contact-copy"><p class="eyebrow">YOUR IDEA, OUR CRAFT</p><h2>Have a look<br>in mind? <em>Let's talk.</em></h2><p>Tell us what you're imagining. We'd love to help you bring it to life, one thoughtful detail at a time.</p><form class="booking-form" id="booking-form">
+          <p class="form-heading">Tell us what you're imagining</p>
+          <div class="form-row">
+            <label>Your name<input name="name" autocomplete="name" required maxlength="80" placeholder="How should we address you?"></label>
+            <label>What do you need?
+              <select name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Custom outfit</option><option>Traditional wear</option><option>Alterations / fitting</option><option>Special occasion</option><option>Something else</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>Preferred date <span class="optional-label">Optional</span><input name="date" type="date"></label>
+            <label>Budget range <span class="optional-label">Optional</span>
+              <select name="budget"><option value="">Choose a range</option><option>Under ₦30,000</option><option>₦30,000–₦60,000</option><option>₦60,000–₦100,000</option><option>₦100,000+</option><option>I'd like guidance</option></select>
+            </label>
+          </div>
+          <label>Describe your idea<textarea name="details" rows="3" maxlength="800" placeholder="Outfit style, occasion, fabric ideas, measurements…"></textarea></label>
+          <button class="button button-light booking-submit" type="submit">Prepare my enquiry <span>↗</span></button>
+          <p class="form-note">We'll prepare your message in WhatsApp. Choose the NNIA Stitches chat to send it. Nothing is stored on this website.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-actions"><a class="text-link contact-direct" href="https://wa.link/abf3dp" target="_blank" rel="noopener noreferrer">Prefer to message directly? <span>↗</span></a><a class="contact-social" href="https://www.instagram.com/nnia_stitches/" target="_blank" rel="noopener noreferrer">Follow along on Instagram ↗</a></div></div><div class="contact-side"><span>LET'S CREATE SOMETHING<br>THAT FEELS LIKE YOU.</span><span class="contact-flower">✳</span></div></section>
   </main>
 
   <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">N<span>.</span></span><span class="brand-name">NNIA <small>STITCHES</small></span></a><span>MADE WITH INTENTION. FINISHED WITH CARE.</span><span>© <span id="year"></span> NNIA STITCHES</span></footer>
