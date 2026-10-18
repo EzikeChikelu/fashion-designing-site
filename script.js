@@ -95,7 +95,7 @@ bookingForm?.addEventListener("submit", (event) => {
     values.get("details") ? `My idea: ${values.get("details")}` : "",
     "",
     "Please let me know the next steps. Thank you!"
-  ].filter(Boolean).join("\\n");
+  ].filter(Boolean).join("\n");
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(details)}`;
   const opened = window.open(whatsappUrl, "_blank");
   if (opened) opened.opener = null;
