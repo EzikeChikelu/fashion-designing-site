@@ -207,11 +207,9 @@ bookingForm?.addEventListener("submit", (event) => {
     "",
     "Please let me know availability, pricing, and the next steps. Thank you!"
   ].filter(Boolean).join("\n");
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(details)}`;
-  const opened = window.open(whatsappUrl, "_blank");
-  if (opened) opened.opener = null;
-  else window.location.href = whatsappUrl;
-  if (formStatus) formStatus.textContent = "Your enquiry is prepared. In WhatsApp, choose the NNIA Stitches chat and tap Send.";
+  const emailUrl = `mailto:virginiadaeze@gmail.com?subject=${encodeURIComponent("Custom outfit enquiry — NNIA Stitches")}&body=${encodeURIComponent(details)}`;
+  window.location.href = emailUrl;
+  if (formStatus) formStatus.textContent = "Your email app should open with the enquiry prepared. Review it and tap Send.";
 });
 
 // Close the mobile navigation with Escape as well as the menu button.
