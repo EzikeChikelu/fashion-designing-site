@@ -96,7 +96,7 @@
 
 
 /* Owner spotlight, extra gallery and accessible top dropdown */
-.hero-image.boss-image{background-image:linear-gradient(180deg,rgba(26,25,20,.02),rgba(26,25,20,.16)),url("https://drive.google.com/thumbnail?id=16S92OyXlDW5XmAf3pdSVMQ8lHTR_l4gE&sz=w1200");background-position:center 25%;}
+.hero-image.boss-image{background-image:linear-gradient(180deg,rgba(26,25,20,.02),rgba(26,25,20,.16)),url("images/topimage.jpg");background-position:center 25%;}
 .nav-dropdown{position:relative}
 .nav-dropdown>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:12px 2px;user-select:none}
 .nav-dropdown>summary::-webkit-details-marker{display:none}
