@@ -10,6 +10,7 @@ menuButton?.addEventListener("click", () => {
 
 navigation?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
+    link.closest("details")?.removeAttribute("open");
     navigation.classList.remove("open");
     menuButton?.setAttribute("aria-expanded", "false");
     menuButton?.setAttribute("aria-label", "Open navigation");
@@ -18,6 +19,7 @@ navigation?.querySelectorAll("a").forEach((link) => {
 
 const filterButtons = document.querySelectorAll(".filter-button");
 const galleryItems = document.querySelectorAll(".gallery-item");
+const filterableGalleryItems = document.querySelectorAll(".gallery:not(.gallery-extra) .gallery-item");
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -27,7 +29,7 @@ filterButtons.forEach((button) => {
       item.classList.toggle("active", active);
       item.setAttribute("aria-pressed", String(active));
     });
-    galleryItems.forEach((item) => {
+    filterableGalleryItems.forEach((item) => {
       item.hidden = filter !== "all" && item.dataset.category !== filter;
     });
   });
